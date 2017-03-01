@@ -1,8 +1,8 @@
 import * as webpack from 'webpack'
 import * as helpers from './helpers';
 
-export const webpackConfig = {
-    devtool: 'inline-source-map',
+const config = {
+    // devtool: 'inline-source-map',
 
     resolve: {
         extensions: ['.ts', '.js']
@@ -12,26 +12,26 @@ export const webpackConfig = {
         rules: [
             {
                 test: /\.ts$/,
-                loaders: ['ts-loader', 'angular2-template-loader']
+                use: ['ts-loader', 'angular2-template-loader']
             },
             {
                 test: /\.html$/,
-                loader: 'html-loader'
+                use: 'html-loader'
 
             },
             {
                 test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-                loader: 'null-loader'
+                use: 'null-loader'
             },
             {
                 test: /\.css$/,
                 exclude: helpers.root('src', 'app'),
-                loader: 'null-loader'
+                use: 'null-loader'
             },
             {
                 test: /\.css$/,
                 include: helpers.root('src', 'app'),
-                loader: 'raw-loader'
+                use: 'raw-loader'
             }
         ]
     },
@@ -45,4 +45,7 @@ export const webpackConfig = {
         )
     ]
 };
+
+export = config;
+
 

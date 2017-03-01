@@ -1,21 +1,21 @@
-import * as path from 'path';
-import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import * as path from "path";
+import * as HtmlWebpackPlugin from "html-webpack-plugin";
 import {
     Configuration,
     ContextReplacementPlugin,
-} from 'webpack';
+} from "webpack";
 
-const APP = './src';
-const DIST = './dist';
+const APP = "./src";
+const DIST = "./dist";
 
 const config: Configuration = {
     context: path.resolve(__dirname, APP),
     entry: {
-        vendor: './vendor.ts',
-        app: './index.ts',
+        vendor: "./vendor.ts",
+        app: "./index.ts",
     },
     output: {
-        filename: '[name]-[hash].js',
+        filename: "[name]-[hash].js",
         path: path.resolve(__dirname, DIST),
     },
     module: {
@@ -23,30 +23,30 @@ const config: Configuration = {
             {
                 test: /.ts$/,
                 use: [
-                    'ts-loader',
+                    "ts-loader",
                 ],
             },
             {
                 test: /.html$/,
-                use: 'html-loader',
+                use: "html-loader",
             },
             {
                 test: /\.less$/,
                 use: [
-                    'css-to-string-loader',
-                    'css-loader',
-                    'less-loader'
+                    "css-to-string-loader",
+                    "css-loader",
+                    "less-loader"
                 ]
             },
             {
                 test: /(\.png|.jpg|.gif|.svg)$/,
-                use: 'file-loader',
+                use: "file-loader",
             }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './index.html'
+            template: "./index.html"
         }),
         new ContextReplacementPlugin(
             /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
@@ -61,7 +61,11 @@ const config: Configuration = {
         },
     },
     resolve: {
-        extensions: ['.ts', '.js', '.json'],
+        extensions: [".ts", ".js", ".json"],
+        modules: [
+            process.cwd(),
+            "node_modules",
+        ]
     }
 };
 

@@ -1,4 +1,8 @@
-<div>
-    app
-    <cd-panel></cd-panel>
+<div style="display: flex">
+    <nav style="width: 120px">
+        <a *ngFor="let route of routes" routerLink={{route.path}} routerLinkActive="active">{{route.path}}</a>
+    </nav>
+    <div style="flex: 1">
+        <router-outlet></router-outlet>
+    </div>
 </div>
