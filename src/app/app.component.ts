@@ -12,7 +12,7 @@ import {
     styles: [require("./app.component.less")],
 })
 export class AppComponent {
-    routes: Routes = []
+    routes: Routes = [];
 
     constructor(private router: Router) {
         this.routes = router.config;

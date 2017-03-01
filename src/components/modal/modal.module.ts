@@ -1,16 +1,16 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { DialogComponent } from "./dialog.component";
+import { ModalComponent } from "./modal.component";
 
 @NgModule({
     imports: [
         BrowserModule,
     ],
     declarations: [
-        DialogComponent,
+        ModalComponent,
     ],
     exports: [
-        DialogComponent,
+        ModalComponent,
     ]
 })
 export class DialogModule {

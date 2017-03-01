@@ -7,15 +7,24 @@ import {
 import { DialogModule } from "../";
 
 @Component({
-    template: require("./dialog-example.html"),
+    template: require("./modal-example.html"),
 })
 export class ExampleComponent implements OnInit {
+    openModal: boolean = false;
+
     constructor() {
     }
 
     ngOnInit() {
     }
 
+    open() {
+        this.openModal = true;
+    }
+
+    close() {
+        this.openModal = false;
+    }
 }
 
 @NgModule({
