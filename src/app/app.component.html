@@ -1,8 +1,10 @@
-<div style="display: flex">
-    <nav style="width: 120px">
-        <a *ngFor="let route of routes" routerLink={{route.path}} routerLinkActive="active">{{route.path}}</a>
+<div class="container">
+    <nav class="nav">
+        <ul *ngFor="let route of routes">
+            <li><a routerLink={{route.path}} routerLinkActive="active">{{route.path}}</a></li>
+        </ul>
     </nav>
-    <div style="flex: 1">
+    <div class="main">
         <router-outlet></router-outlet>
     </div>
 </div>

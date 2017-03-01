@@ -9,7 +9,17 @@ import {
     styles: [require("./dialog.component.less")]
 })
 export class DialogComponent implements OnInit {
+    open: boolean = true;
+
     constructor() {
+    }
+
+    openDialog() {
+        this.open = true;
+    }
+
+    closeDialog() {
+        this.open = false;
     }
 
     ngOnInit() {

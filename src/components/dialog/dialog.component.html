@@ -1,1 +1,10 @@
-<div>dialog</div>
+<div class="dialog" *ngIf="open">
+    <div class="overlay-container">
+        <div class="overlay-backdrop" (click)="closeDialog()"></div>
+        <div class="overlay-wrapper">
+            <div class="dialog-container">
+                <div class="dialog-content">Hi, I'm a dialog!</div>
+            </div>
+        </div>
+    </div>
+</div>

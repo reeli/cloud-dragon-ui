@@ -9,6 +9,7 @@ import {
 @Component({
     selector: "cd-app",
     template: require("./app.component.html"),
+    styles: [require("./app.component.less")],
 })
 export class AppComponent {
     routes: Routes = []

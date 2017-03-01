@@ -6,7 +6,6 @@ import {
 } from "@angular/core";
 
 @Component({
-    selector: "cd-alert-msg-example",
     template: require("./alert-msg-example.html"),
 })
 export class ExampleComponent {

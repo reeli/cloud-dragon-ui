@@ -9,6 +9,9 @@ import { DialogComponent } from "./dialog.component";
     declarations: [
         DialogComponent,
     ],
+    exports: [
+        DialogComponent,
+    ]
 })
 export class DialogModule {
 }
